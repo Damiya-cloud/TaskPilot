@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=380, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TaskPilot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="gradient-bg">
+    <div class="p-4">
+        <!-- Header -->
+        <div class="text-center mb-6">
+            <h1 class="text-2xl font-bold text-text-primary mb-2">TaskPilot</h1>
+            <div class="bg-white-80 backdrop-blur-sm rounded-lg p-3 shadow-sm">
+                <p class="text-sm text-text-secondary">Today's Worked Time<br>Horas Trabajadas Hoy</p>
+                <p class="text-lg font-semibold text-text-primary timer-display" id="totalTime">0h 0m</p>
+            </div>
+        </div>
+
+        <!-- Task Tracker Section -->
+        <div class="mb-6">
+            <div class="flex items-center justify-between mb-3">
+                <h2 class="text-lg font-semibold text-text-primary">Tasks</h2>
+                <button id="addTaskBtn" class="bg-pastel-blue hover--bg-blue-300 text-white px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 shadow-sm">
+                    + Add Task
+                </button>
+            </div>
+            <!-- Add Task Form (Initially Hidden) -->
+            <div id="addTaskForm" class="hidden bg-white-90 backdrop-blur-sm rounded-lg p-3 mb-3 shadow-sm">
+                <input type="text" id="taskNameInput" placeholder="Enter task name..." 
+                       class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-pastel-blue mb-2">
+                <div class="flex gap-2">
+                    <button id="saveTaskBtn" class="bg-pastel-green hover--bg-green-300 text-white px-3 py-1 rounded-lg text-sm font-medium transition-colors duration-200 flex-1">
+                        Save
+                    </button>
+                    <button id="cancelTaskBtn" class="bg-gray-300 hover--bg-gray-400 text-gray-700 px-3 py-1 rounded-lg text-sm font-medium transition-colors duration-200 flex-1">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+            <!-- Tasks List -->
+            <div id="tasksList" class="space-y-2">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- Meetings Section -->
+        <div>
+            <div class="flex items-center justify-between mb-3">
+                <h2 class="text-lg font-semibold text-text-primary">Meetings</h2>
+                <button id="addMeetingBtn" class="bg-pastel-purple hover--bg-purple-300 text-white px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 shadow-sm">
+                    + Add Meeting
+                </button>
+            </div>
+            <!-- Add Meeting Form (Initially Hidden) -->
+            <div id="addMeetingForm" class="hidden bg-white-90 backdrop-blur-sm rounded-lg p-3 mb-3 shadow-sm">
+                <input type="text" id="meetingNameInput" placeholder="Meeting name..." 
+                       class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-pastel-purple mb-2">
+                <input type="url" id="meetingUrlInput" placeholder="Meeting URL..." 
+                       class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-pastel-purple mb-2">
+                <input type="datetime-local" id="meetingTimeInput" 
+                       class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-pastel-purple mb-2">
+                <div class="flex gap-2">
+                    <button id="saveMeetingBtn" class="bg-pastel-purple hover--bg-purple-300 text-white px-3 py-1 rounded-lg text-sm font-medium transition-colors duration-200 flex-1">
+                        Save
+                    </button>
+                    <button id="cancelMeetingBtn" class="bg-gray-300 hover--bg-gray-400 text-gray-700 px-3 py-1 rounded-lg text-sm font-medium transition-colors duration-200 flex-1">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+            <!-- Meetings List -->
+            <div id="meetingsList" class="space-y-2">
+                <!-- Meetings will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
